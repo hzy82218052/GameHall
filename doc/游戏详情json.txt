@@ -1,0 +1,48 @@
+入参：gameid
+返回结果：
+{	
+    "code":"100",//
+    "msg":"成功",
+    
+    "app_recom"://相关游戏
+	[{
+	     
+	     "gameid":"1172",//游戏id
+             "gametpe":"1",//游戏类型、如体感、手柄、触屏等等
+	     "gameicon":"http://res.jzmob.com/adresources/201206/1340169450836.png",//图片连接
+	     "gamename":"卫士默认卫士默认",//游戏名称
+	    
+	     "appversion":"3.3.1",//软件版本号
+	     "apppackagename":"com.qihoo360.mobilesafe",//软件包名
+	     "appcode":"5000",//软件版本值
+	     "applink":"http://res.jzmob.com/useresources/201206/1340015761890.apk",//下载连接
+	     "appsize":"448790500000",//软件大小
+	     "appdownloadnum":"10123"//下载数
+	  }...],
+	
+	"gamedetail"://
+	{         
+	     
+	     "gameid":"1172",//游戏id
+             "gametpe":"1",//游戏类型、如体感、手柄、触屏等等
+	     "gameicon":"http://res.jzmob.com/adresources/201206/1340169450836.png",//图片连接
+	     "gamename":"卫士默认卫士默认",//游戏名称
+	    
+	     "appversion":"3.3.1",//软件版本号
+	     "apppackagename":"com.qihoo360.mobilesafe",//软件包名
+	     "appcode":"5000",//软件版本值
+	     "applink":"http://res.jzmob.com/useresources/201206/1340015761890.apk",//下载连接
+	     "appsize":"448790500000",//软件大小
+	     "appdownloadnum":"10123",//下载数
+             "game_small_title":"棋牌游戏",//游戏名称后小标题
+             "appstar":"15",//评分 50分制度
+             "marktype":["棋牌","斗地主"，"策略"],//标记如：棋牌类
+             "content":"您有过......",//游戏介绍
+	     "imageurl":["http://res.jzmob.com/adresources/201206/1339491062716.jpg",
+                         "http://res.jzmob.com/adresources/201206/1339491037181.jpg",
+                         "http://res.jzmob.com/adresources/201206/1339491040614.jpg",
+                         "http://res.jzmob.com/adresources/201206/1339491046468.jpg"],//游戏截图
+	     /** 评分详情或者评分模块--评分为下载完成后可评价，目前不太清楚是否需求中有这个，先不加 */ 
+	}
+	
+}

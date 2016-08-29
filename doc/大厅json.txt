@@ -1,0 +1,37 @@
+{	"code":"100",//这里定义code返回结果判断成功与否
+	"msg":"成功",//code值对应解释
+        "data"：[{
+          "title":"腾讯游戏",//其他类型按需求定义:如最新上线、体感游戏
+          "game_datas":[{
+	     
+	     "gameid":"1172",//游戏id
+             "gametype":"1",//游戏类型、如体感、手柄、触屏等等
+	     "gameicon":"http://res.jzmob.com/adresources/201206/1340169450836.png",//图片连接
+	     "gamename":"卫士默认卫士默认",//游戏名称
+	    
+	     "appversion":"3.3.1",//软件版本号
+	     "apppackagename":"com.qihoo360.mobilesafe",//软件包名
+	     "appcode":"5000",//软件版本值
+	     "applink":"http://res.jzmob.com/useresources/201206/1340015761890.apk",//下载连接
+	     "appsize":"448790500000",//软件大小
+	     "appdownloadnum":"10123"//下载数
+	  }...]
+        },
+       {
+          "title":"最新上线",//其他类型按需求定义:如最新上线、体感游戏
+          "game_datas":[{
+	     
+	     "gameid":"1172",//游戏id
+             "gametype":"1",//游戏类型、如体感、手柄、触屏等等
+	     "gameicon":"http://res.jzmob.com/adresources/201206/1340169450836.png",//图片连接
+	     "gamename":"卫士默认卫士默认",//游戏名称
+	    
+	     "appversion":"3.3.1",//软件版本号
+	     "apppackagename":"com.qihoo360.mobilesafe",//软件包名
+	     "appcode":"5000",//软件版本值
+	     "applink":"http://res.jzmob.com/useresources/201206/1340015761890.apk",//下载连接
+	     "appsize":"448790500000",//软件大小
+	     "appdownloadnum":"10123"//下载数
+	  }...],
+       }....]
+}
