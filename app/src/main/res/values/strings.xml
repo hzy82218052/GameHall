@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">GameHall</string>
+
+    <string name="hot_game">热门游戏</string>
+    <string name="tv_game">电视游戏</string>
+    <string name="hand_game">手柄游戏</string>
+    <string name="peripheral_game">外设游戏</string>
+    <string name="game_peripheral">游戏外设</string>
+    <string name="all_game">全部游戏</string>
+    <string name="role_strategy">角色策略</string>
+    <string name="chess_game">棋牌游戏</string>
+    <string name="leisure_puzzle">休闲益智</string>
+    <string name="flight_shooting">飞行射击</string>
+    <string name="act_adventure">动作冒险</string>
+    <string name="sports">体育竞技</string>
+    <string name="children_intelligence">儿童益智</string>
+
+    <string name="game_search">搜索</string>
 </resources>

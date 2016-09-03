@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hot_game" />
+
+        <TextView
+            style="@style/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_game" />
+
+        <TextView
+            style="@style/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hand_game" />
+
+        <TextView
+            style="@style/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/peripheral_game" />
+
+        <TextView
+            style="@style/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_peripheral" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        >
+
+        <TextView
+            style="@style/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/all_game" />
+
+        <TextView
+            style="@style/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/role_strategy" />
+
+        <TextView
+            style="@style/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chess_game" />
+
+        <TextView
+            style="@style/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/leisure_puzzle" />
+
+        <TextView
+            style="@style/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/flight_shooting" />
+
+        <TextView
+            style="@style/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_adventure" />
+
+        <TextView
+            style="@style/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sports" />
+
+        <TextView
+            style="@style/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/children_intelligence" />
+    </LinearLayout>
+</LinearLayout>
