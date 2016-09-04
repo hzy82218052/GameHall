@@ -697,7 +697,7 @@ public class UGAppConf implements Serializable {
     public void notifyChange(UGAppConf conf, int state) {
         if (mChangeListenners != null) {
             for (int i = 0; i < mChangeListenners.size(); i++) {
-                mChangeListenners.get(i).onChange(this, state);
+                mChangeListenners.get(i).onChange(conf, state);
             }
         }
     }

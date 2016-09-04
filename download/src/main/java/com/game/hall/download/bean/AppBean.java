@@ -96,7 +96,7 @@ public class AppBean {
 	public UGAppConf getAppConf(){
 		if (appConf == null) {
 			try {
-//				appConf = UGAppConfManager.getManager().register(this);
+				appConf = UGAppConfManager.getManager().register(this);
 			} catch (Exception e) {
 				// TODO: handle exception
 				appConf = null;

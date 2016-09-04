@@ -12,85 +12,114 @@
             style="@style/title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hot_game" />
+            android:text="@string/hot_game"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            />
 
         <TextView
             style="@style/title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tv_game" />
+            android:text="@string/tv_game"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hand_game" />
+            android:text="@string/hand_game"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/peripheral_game" />
+            android:text="@string/peripheral_game"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/game_peripheral" />
+            android:text="@string/game_peripheral"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="7dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:background="@drawable/rectangle_white_line"
         >
 
         <TextView
             style="@style/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/all_game" />
+            android:text="@string/all_game"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/role_strategy" />
+            android:text="@string/role_strategy"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/chess_game" />
+            android:text="@string/chess_game"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/leisure_puzzle" />
+            android:text="@string/leisure_puzzle"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/flight_shooting" />
+            android:text="@string/flight_shooting"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/act_adventure" />
+            android:text="@string/act_adventure"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sports" />
+            android:text="@string/sports"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             style="@style/title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/children_intelligence" />
+            android:text="@string/children_intelligence"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
     </LinearLayout>
 </LinearLayout>

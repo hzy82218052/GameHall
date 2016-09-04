@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="GameImageView">
+        <attr name="sapemode" format="reference">
+            <enum name="vertical" value="0"></enum>
+            <enum name="horizontal" value="1"></enum>
+            <enum name="square" value="2"></enum>
+        </attr>
+
+    </declare-styleable>
+
+</resources>

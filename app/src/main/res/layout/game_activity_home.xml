@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/game_bg"
     android:orientation="vertical">
 
     <include
@@ -9,22 +10,39 @@
         layout="@layout/game_layout_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="50dp"
         />
 
 
     <TextView
         android:id="@+id/game_search"
+        style="@style/title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/title1"
-        android:text="@string/game_search"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
         android:layout_alignTop="@+id/layout_title"
+        android:layout_marginRight="40dp"
         android:drawableLeft="@mipmap/game_search"
         android:drawablePadding="10dp"
-        />
+        android:text="@string/game_search"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+
+    <HorizontalScrollView
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/layout_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/scrollview"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        >
+        <include
+            android:id="@+id/game_win8" layout="@layout/game_frame_win8" />
+    </HorizontalScrollView>
 
 
 </RelativeLayout>

@@ -22,6 +22,11 @@
 -dontpreverify        # 混淆时是否做预校验
 -verbose              # 混淆时是否记录日志
 
+-dontskipnonpubliclibraryclasses  #指定不去忽略非公共的库类。
+-ignorewarnings   #忽略警告
+
+#-dontskipnonpubliclibraryclassmembers    #指定不去忽略包可见的库类的成员。
+
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*  # 混淆时所采用的算法
 
 -keep public class * extends android.app.Activity      # 保持哪些类不被混淆
@@ -50,3 +55,8 @@
 -keep class * implements android.os.Parcelable { # 保持 Parcelable 不被混淆
     public static final android.os.Parcelable$Creator *;
 }
+
+-keep class com.facebook.** { *; }  #不混淆facebook
+-keep class com.google.gson.** { *; }  #不混淆gson
+-keep class okhttp3.** { *; }  #不混淆okhttps3
+-keep class com.nineoldandroids.** { *; }  #不混淆nineoldandroids
