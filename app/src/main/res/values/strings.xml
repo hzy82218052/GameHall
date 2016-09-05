@@ -16,4 +16,20 @@
     <string name="children_intelligence">儿童益智</string>
 
     <string name="game_search">搜索</string>
+
+
+    <string name="game_down">下载</string>
+    <string name="game_downing">下载中</string>
+    <string name="game_keep">继续</string>
+    <string name="game_install">正在安装</string>
+    <string name="game_open">运行</string>
+    <string name="game_introduction">游戏介绍</string>
+    <string name="game_screenshot">游戏截图</string>
+    <string name="game_related">相关游戏</string>
+    <string name="game_star">%1$s分</string>
+    <string name="game_downnum">下载:%1$s次</string>
+    <string name="game_type">分类:%1$s\u0020\u0020\u0020\u0020操作:</string>
+
+
+
 </resources>

@@ -5,8 +5,12 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorGreenLight">#11FFCC</color>
-    <color name="colorGrayT">#CC000000</color>
+    <color name="colorGrayWhite">#CCCCCC</color>
+    <color name="colorGreenLight">#BB11FFCC</color>
+    <color name="colorBlackT">#CC000000</color>
+    <color name="colorShadow">#44000000</color>
     <color name="colorTransparent">#00000000</color>
+    <color name="colorYellow">#FFFF00</color>
     <color name="colorBlue">#0099FF</color>
+    <color name="colorBlueLight">#0099EE</color>
 </resources>

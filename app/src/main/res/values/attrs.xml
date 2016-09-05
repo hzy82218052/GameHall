@@ -9,5 +9,14 @@
         </attr>
 
     </declare-styleable>
+    <declare-styleable name="TitleLine">
+        <attr name="divided" format="integer"/>
+        <attr name="dividedHight" format="dimension"></attr>
+        <attr name="dividedColor" format="reference"></attr>
+        <attr name="bg_color" format="reference"></attr>
+        <attr name="bg_height" format="dimension"></attr>
+    </declare-styleable>
+
+
 
 </resources>
