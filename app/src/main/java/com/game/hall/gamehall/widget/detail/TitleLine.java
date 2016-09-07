@@ -1,5 +1,6 @@
 package com.game.hall.gamehall.widget.detail;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -21,7 +22,13 @@ public class TitleLine extends View {
     private int bg_color = 0xFFCCCCCC;//默认线条颜色
     private int bg_height = 5;//默认线条高度
 
+    private float dividewidth;//长度
+
     private int currentItem;//当前被选择
+
+
+    private ValueAnimator mAnimator;
+    private int duration = 500;
 
     private Paint paint;
 
@@ -39,7 +46,7 @@ public class TitleLine extends View {
         init(context, attrs);
     }
 
-    //    getDimension/getDimensionPixelOffset
+//    getDimension/getDimensionPixelOffset
 //    的功能差不多,都是获取某个dimen的值,如果是dp或sp的单位,将其乘以density,如果是px,则不乘;两个函数的区别是一个返回float,一个返回int.
 //
 //    getDimensionPixelSize
@@ -57,26 +64,40 @@ public class TitleLine extends View {
         dividedColor = typedArray.getColor(R.styleable.TitleLine_dividedColor, dividedColor);
         bg_color = typedArray.getColor(R.styleable.TitleLine_bg_color, bg_color);
         bg_height = typedArray.getDimensionPixelOffset(R.styleable.TitleLine_bg_height, bg_height);
+
+//        mAnimator = ValueAnimator.ofFloat(1f, 0f);
+//        mAnimator.setDuration(3000);
+
     }
 
     public void setDivided(int divided) {
         this.divided = divided;
+        postInvalidate();
     }
 
     public void setDividedHight(int dividedHight) {
         this.dividedHight = dividedHight;
+        postInvalidate();
     }
 
     public void setDividedColor(int dividedColor) {
         this.dividedColor = dividedColor;
+        postInvalidate();
     }
 
     public void setBg_height(int bg_height) {
         this.bg_height = bg_height;
+        postInvalidate();
     }
 
     public void setBg_color(int bg_color) {
         this.bg_color = bg_color;
+        postInvalidate();
+    }
+
+    public void setCurrentItem(int currentItem) {
+        this.currentItem = currentItem;
+        postInvalidate();
     }
 
     @Override
@@ -102,11 +123,19 @@ public class TitleLine extends View {
         if (divided < 2) {
             divided = 2;
         }
-        float dividewidth = width / divided;
+        dividewidth = width / divided;
 
         paint.setColor(dividedColor);
         paint.setStrokeWidth(dividedHight);
 
         canvas.drawLine((currentItem * dividewidth), height / 2, (currentItem + 1) * dividewidth, height / 2, paint);
     }
+
+//    public void startAnim(){
+//        if(dividewidth==0){
+//            return;
+//        }
+//        float int dividewidth/duration;
+//    }
+
 }

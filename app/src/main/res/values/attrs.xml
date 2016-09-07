@@ -18,5 +18,10 @@
     </declare-styleable>
 
 
-
+    <declare-styleable name="ScreenShot">
+        <!--<attr name="nums" format="integer"/>-->
+        <attr name="itemWidth" format="dimension"></attr>
+        <attr name="itemHeight" format="dimension"></attr>
+        <attr name="interval" format="dimension"></attr>
+    </declare-styleable>
 </resources>
