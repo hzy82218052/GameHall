@@ -15,6 +15,7 @@
         <!--android:layout_height="wrap_content"-->
         <!--android:text="Hello World!" />-->
     <com.game.hall.gamehall.widget.detail.TitleLine
+        android:id="@+id/titleline"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         app:divided="3"

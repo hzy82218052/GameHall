@@ -16,13 +16,14 @@ import com.game.hall.gamehall.R;
 public class TitleLine extends View {
 
     private int divided = 4;//分为几份
-    private int dividedHight = 10 ;//高度
+    private int dividedHight = 10;//高度
     private int dividedColor = 0xFF0099FF;//选中颜色
-    private int bg_color= 0xFFCCCCCC;//默认线条颜色
+    private int bg_color = 0xFFCCCCCC;//默认线条颜色
     private int bg_height = 5;//默认线条高度
 
-    private Paint paint;
+    private int currentItem;//当前被选择
 
+    private Paint paint;
 
     public TitleLine(Context context) {
         this(context, null);
@@ -30,14 +31,20 @@ public class TitleLine extends View {
 
     public TitleLine(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context, attrs);
     }
 
     public TitleLine(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs);
+        init(context, attrs);
     }
 
-    void init(Context context,AttributeSet attrs){
+    //    getDimension/getDimensionPixelOffset
+//    的功能差不多,都是获取某个dimen的值,如果是dp或sp的单位,将其乘以density,如果是px,则不乘;两个函数的区别是一个返回float,一个返回int.
+//
+//    getDimensionPixelSize
+//    则不管写的是dp还是sp还是px,都会乘以denstiy.
+    void init(Context context, AttributeSet attrs) {
 
 //        final Resources.Theme theme = context.getTheme();
 
@@ -45,11 +52,11 @@ public class TitleLine extends View {
                 R.styleable.TitleLine);
 //        TypedArray typedArray2 = context.obtainStyledAttributes(attrs,
 //                com.android.internal.R.styleable.View);
-        divided = attrs.getAttributeIntValue(R.styleable.TitleLine_divided,divided);
-        dividedHight= typedArray.getDimensionPixelSize(R.styleable.TitleLine_dividedHight,dividedHight);
-        dividedColor = typedArray.getColor(R.styleable.TitleLine_dividedColor,dividedColor);
-        bg_color = typedArray.getColor(R.styleable.TitleLine_bg_color,bg_color);
-        dividedHight = typedArray.getDimensionPixelSize(R.styleable.TitleLine_bg_height,bg_height);
+        divided = attrs.getAttributeIntValue(R.styleable.TitleLine_divided, divided);
+        dividedHight = typedArray.getDimensionPixelOffset(R.styleable.TitleLine_dividedHight, dividedHight);
+        dividedColor = typedArray.getColor(R.styleable.TitleLine_dividedColor, dividedColor);
+        bg_color = typedArray.getColor(R.styleable.TitleLine_bg_color, bg_color);
+        bg_height = typedArray.getDimensionPixelOffset(R.styleable.TitleLine_bg_height, bg_height);
     }
 
     public void setDivided(int divided) {
@@ -84,31 +91,22 @@ public class TitleLine extends View {
         int width = getMeasuredWidth();
         int height = getMeasuredHeight();
 
-        float topDividedHeight = (float) (height-dividedHight)/2;
-        float topBgheight = (float) (height-bg_height)/2;
-
-
         paint = new Paint();
         paint.setAntiAlias(true);
-        if (topBgheight<=0){
-            topBgheight = 0;
-        }
 
         paint.setColor(bg_color);
-        paint.setStrokeWidth(topBgheight);
-        canvas.drawLine(0,topBgheight,width,topBgheight+bg_height,paint);
+        paint.setStrokeWidth(bg_height);
+        canvas.drawLine(0, height / 2, width, height / 2, paint);
         canvas.save();
 
-
-        if(divided<2){
+        if (divided < 2) {
             divided = 2;
         }
-        float dividewidth = width/divided;
-        if (topDividedHeight<=0){
-            topDividedHeight = 0;
-        }
+        float dividewidth = width / divided;
+
         paint.setColor(dividedColor);
-        paint.setStrokeWidth(topDividedHeight);
-        canvas.drawLine(0,topDividedHeight,0+dividewidth,topDividedHeight,paint);
+        paint.setStrokeWidth(dividedHight);
+
+        canvas.drawLine((currentItem * dividewidth), height / 2, (currentItem + 1) * dividewidth, height / 2, paint);
     }
 }
