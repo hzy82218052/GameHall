@@ -17,16 +17,26 @@
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>
         <item name="android:scrollbars">none</item>
-        </style>
-    
+    </style>
+
+    <style name="focusable_false">
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+    </style>
+    <style name="focusable_true">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+
     <style name="title1">
-    <item name="android:textSize">20sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:singleLine">true</item>
         <item name="android:textColor">@drawable/txt_home_seletor</item>
         <item name="android:paddingRight">22dp</item>
         <item name="android:paddingTop">7dp</item>
         <item name="android:paddingBottom">7dp</item>
     </style>
+
     <style name="title2">
         <item name="android:textSize">16sp</item>
         <item name="android:singleLine">true</item>
@@ -39,7 +49,7 @@
     </style>
 
 
-    <style name="detail_title">
+    <style name="detail_title" parent="focusable_false">
         <item name="android:textSize">16sp</item>
         <item name="android:singleLine">true</item>
         <item name="android:textColor">@drawable/txt_home_seletor</item>
@@ -48,7 +58,8 @@
         <item name="android:paddingTop">3dp</item>
         <item name="android:paddingBottom">3dp</item>
     </style>
-    <style name="detail_star">
+
+    <style name="detail_star" parent="focusable_false">
         <item name="android:textSize">12sp</item>
         <item name="android:singleLine">true</item>
         <item name="android:textColor">@color/colorYellow</item>
@@ -57,13 +68,25 @@
         <item name="android:paddingTop">3dp</item>
         <item name="android:paddingBottom">3dp</item>
     </style>
+
     <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
-        <item name="@+android:id/background">"@drawable/star1"</item>
-        <item name="@+android:id/secondaryProgress">"@drawable/star1"</item>
-        <item name="@+android:id/progress">"@drawable/star2"</item>
+        <item name="@android:id/background">"@drawable/star1"</item>
+        <item name="@android:id/secondaryProgress">"@drawable/star1"</item>
+        <item name="@android:id/progress">"@drawable/star2"</item>
         <item name="android:progressDrawable">@drawable/room_rating_bar</item>
         <item name="android:minHeight">16dp</item>
         <item name="android:maxHeight">16dp</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+    </style>
+
+    <style name="detail_down" parent="focusable_true">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@drawable/txt_home_seletor</item>
+        <item name="android:paddingLeft">7dp</item>
+        <item name="android:paddingRight">7dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
     </style>
 
 

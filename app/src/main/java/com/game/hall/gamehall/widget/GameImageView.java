@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -41,8 +42,10 @@ public class GameImageView extends FrameLayout {
 
     private int width;//宽
     private int height;//高
+    private float maxHeight = 334;//最高高度
 
     private int drawableResource;
+    private int txtSize;
     private String txt;
 
     private ImageView imageView;
@@ -74,6 +77,11 @@ public class GameImageView extends FrameLayout {
         invalidate();
     }
 
+    public void setTxtSize(int txtSize) {
+        this.txtSize = txtSize;
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, txtSize);
+    }
+
     public SapeMode getMode() {
         return mode;
     }
@@ -90,10 +98,12 @@ public class GameImageView extends FrameLayout {
         imageView = (ImageView) findViewById(R.id.game_image);
         textView = (TextView) findViewById(R.id.game_txt);
 
+
         TypedArray typedArray = context.obtainStyledAttributes(attrs,
                 R.styleable.GameImageView);
 
         int value = typedArray.getInt(R.styleable.GameImageView_sapemode, 0);
+        maxHeight = typedArray.getDimensionPixelOffset(R.styleable.GameImageView_maxHeight, 334);
         mode = getSapeMode(value);
         initWidthAndHeight();
     }
@@ -106,20 +116,21 @@ public class GameImageView extends FrameLayout {
         screenWidth = wm.getDefaultDisplay().getWidth();
         screenHeight = wm.getDefaultDisplay().getHeight();
 
-        float maxHeight = screenHeight * 680 / 1080;
+        if (maxHeight == 0)
+            maxHeight = screenHeight * 680 / 1080;
 
         switch (mode) {
             case VERTICAL:
-                height = (int) maxHeight;
-                width = (int) (maxHeight * 334 / 680);
+                height = (int) (maxHeight * 680 / 334);
+                width = (int) maxHeight;
                 break;
             case HORIZONTAL:
-                height = (int) (maxHeight * 334 / 680);
-                width = (int) (maxHeight * 780 / 680);
+                height = (int) maxHeight;
+                width = (int) (maxHeight * 780 / 334);
                 break;
             case SQUARE:
-                height = (int) (maxHeight * 334 / 680);
-                width = (int) (maxHeight * 334 / 680);
+                height = (int) maxHeight;
+                width = (int) maxHeight;
                 break;
         }
     }

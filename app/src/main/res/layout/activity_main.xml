@@ -23,7 +23,22 @@
         app:dividedColor="@color/colorBlue"
         app:bg_color="@color/colorGrayWhite"
         app:bg_height="10dp"
-
-
         />
+
+    <com.dd.processbutton.iml.ActionProcessButton
+
+        android:id="@+id/game_down"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        style="@style/detail_down"
+        android:text="@string/game_down"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:pb_colorComplete="@color/colorYellow"
+        app:pb_colorNormal="@color/colorBlue"
+        app:pb_colorPressed="@color/colorBlueLight"
+        app:pb_colorProgress="@color/colorOrange"
+        app:pb_textComplete="@string/game_install"
+        app:pb_textProgress="@string/game_downing" />
+
 </RelativeLayout>

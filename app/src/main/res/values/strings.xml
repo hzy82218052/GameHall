@@ -19,6 +19,7 @@
 
 
     <string name="game_down">下载</string>
+    <string name="game_down_success">下载成功</string>
     <string name="game_downing">下载中</string>
     <string name="game_keep">继续</string>
     <string name="game_install">正在安装</string>

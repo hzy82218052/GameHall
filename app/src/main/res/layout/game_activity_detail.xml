@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/game_bg"
     android:orientation="vertical"
     android:paddingBottom="30dp"
     android:paddingLeft="50dp"
@@ -10,6 +11,7 @@
     android:paddingTop="30dp">
 
     <LinearLayout
+        style="@style/focusable_false"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:gravity="center_vertical"
@@ -17,11 +19,13 @@
 
         <ImageView
             android:id="@+id/game_detail_icon"
+            style="@style/focusable_false"
             android:layout_width="132dp"
             android:layout_height="132dp"
             android:scaleType="fitXY" />
 
         <RelativeLayout
+            style="@style/focusable_false"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginLeft="20dp"
@@ -37,29 +41,39 @@
             <RatingBar
                 android:id="@+id/game_detail_ratingbar"
                 style="@style/roomRatingBar"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/game_detail_title"
+                android:layout_below="@+id/game_detail_title"
                 android:numStars="5"
-                android:rating="4"/>
+                android:rating="4"
+                />
+
             <TextView
                 android:id="@+id/game_detail_star"
+                android:layout_marginTop="5dp"
                 style="@style/detail_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="@id/game_detail_ratingbar"
-                android:layout_="@id/game_detail_title"
+                android:layout_alignBottom="@+id/game_detail_ratingbar"
+                android:layout_toRightOf="@id/game_detail_ratingbar"
                 android:text="@string/game_star" />
 
             <TextView
                 android:id="@+id/game_detail_downnum"
+                android:layout_marginTop="5dp"
+                android:layout_alignLeft="@+id/game_detail_title"
                 style="@style/detail_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/game_detail_star"
+                android:layout_below="@id/game_detail_ratingbar"
                 android:text="@string/game_downnum" />
 
             <TextView
                 android:id="@+id/game_detail_type"
+                android:layout_marginTop="5dp"
                 style="@style/detail_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,28 +81,52 @@
                 android:text="@string/game_type"
                 android:textSize="13sp" />
 
-            <Button
+            <com.dd.processbutton.iml.ActionProcessButton
+                android:layout_marginTop="5dp"
                 android:id="@+id/game_down"
-                style="@style/detail_title"
+                style="@style/detail_down"
+                android:layout_marginLeft="7dp"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_below="@id/game_detail_type"
-                android:background="@drawable/button_selector_blue"
                 android:text="@string/game_down"
-                android:textSize="15sp" />
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:pb_colorComplete="@color/colorYellow"
+                app:pb_colorNormal="@color/colorBlue"
+                app:pb_colorPressed="@color/colorBlueLight"
+                app:pb_colorProgress="@color/colorOrange"
+                app:pb_textComplete="@string/game_install"
+                app:pb_textProgress="@string/game_downing" />
 
-            <Button
+            <!--<TextView-->
+            <!--android:id="@+id/game_down"-->
+            <!--style="@style/detail_down"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_below="@id/game_detail_type"-->
+            <!--android:background="@drawable/button_selector_blue"-->
+            <!--android:text="@string/game_down"/>-->
+            <com.dd.processbutton.iml.ActionProcessButton
+                android:layout_marginTop="5dp"
                 android:id="@+id/game_intc"
-                style="@style/detail_title"
+                style="@style/detail_down"
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_alignParentBottom="@id/game_down"
                 android:layout_below="@id/game_detail_type"
                 android:layout_marginLeft="40dp"
                 android:layout_toRightOf="@id/game_down"
-                android:background="@drawable/button_selector_blue"
                 android:text="@string/game_introduction"
-                android:textSize="15sp" />
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:pb_colorComplete="@color/colorYellow"
+                app:pb_colorNormal="@color/colorBlue"
+                app:pb_colorPressed="@color/colorBlueLight"
+                app:pb_colorProgress="@color/colorOrange"
+                app:pb_textComplete="@string/game_install"
+                app:pb_textProgress="@string/game_downing" />
+
         </RelativeLayout>
     </LinearLayout>
 
@@ -96,63 +134,57 @@
         style="@style/detail_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="@string/game_screenshot"
         android:textSize="15sp" />
 
     <com.game.hall.gamehall.widget.detail.TitleLine
         android:id="@+id/titile_screenshot"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="5dp"
         app:bg_color="@color/colorGrayWhite"
-        app:bg_height="10dp"
+        app:bg_height="2dp"
         app:divided="3"
         app:dividedColor="@color/colorBlue"
-        app:dividedHight="20dp" />
+        app:dividedHight="5dp" />
 
     <com.game.hall.gamehall.widget.detail.ScreenShotScollView
         android:id="@+id/scroll_screenshot"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         app:interval="3dp"
         app:itemHeight="110dp"
-        app:itemWidth="145dp" />
+        app:itemWidth="195dp" />
 
 
     <TextView
         style="@style/detail_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:text="@string/game_related"
         android:textSize="15sp" />
 
     <com.game.hall.gamehall.widget.detail.TitleLine
         android:id="@+id/titile_related"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="5dp"
         android:focusable="false"
         android:focusableInTouchMode="false"
         app:bg_color="@color/colorGrayWhite"
-        app:bg_height="10dp"
+        app:bg_height="2dp"
         app:divided="3"
         app:dividedColor="@color/colorBlue"
-        app:dividedHight="20dp" />
+        app:dividedHight="5dp" />
 
-    <com.game.hall.gamehall.widget.detail.ScreenShotScollView
+    <com.game.hall.gamehall.widget.detail.GameImageScollView
         android:id="@+id/scroll_related"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:layout_marginTop="10dp"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
+        android:layout_marginTop="5dp"
         app:interval="3dp"
         app:itemHeight="110dp"
         app:itemWidth="110dp" />

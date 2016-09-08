@@ -48,4 +48,6 @@ dependencies {
     compile 'com.facebook.fresco:fresco:0.11.0'
     //    compile 'com.facebook.fresco:animated-gif:0.11.0'
     compile 'com.google.code.gson:gson:2.6.2'
+    //带进度条的下载按钮
+    compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
 }

@@ -7,7 +7,7 @@
             <enum name="horizontal" value="1"></enum>
             <enum name="square" value="2"></enum>
         </attr>
-
+        <attr name="maxHeight" format="dimension"></attr>
     </declare-styleable>
     <declare-styleable name="TitleLine">
         <attr name="divided" format="integer"/>

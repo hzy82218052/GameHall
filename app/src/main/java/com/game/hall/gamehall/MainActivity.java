@@ -1,6 +1,7 @@
 package com.game.hall.gamehall;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -67,41 +68,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onMy(View view) {
-        int viewWidth = view.getWidth();
-        int viewHeight = view.getHeight();
-        Log.i("@hzy", "---" + "viewWidth=" + viewWidth + "    " + "viewHeight=" + viewHeight);
-        final AppBean bean = (AppBean) view.getTag();
-        final UGAppConf appConf = bean.getAppConf();
+        Intent intent = new Intent(this,GameDetailActivity.class);
+        startActivity(intent);
 
-        UGAppConf.UGOnChangeListenner changeListenner = new UGAppConf.UGOnChangeListenner() {
-
-            @Override
-            public void onChange(UGAppConf conf, int state) {
-                if (gameProDialog != null) {
-                    gameProDialog.setProgress(conf.percent);
-                    if (conf.percent == 100) {
-                        gameProDialog.cancel();
-                    }
-                }
-            }
-        };
-        appConf.addChangeListenner(changeListenner);
-        switch (appConf.state) {
-            case UGAppConf.STATE_INIT:
-            case UGAppConf.STATE_WAIT:
-            case UGAppConf.STATE_DOWNING:
-            case UGAppConf.STATE_PAUSE:
-            case UGAppConf.STATE_UPDATE:
-                gameProDialog = GameProDialog.createProDialog(this);
-                appConf.downApp(this);
-                break;
-            case UGAppConf.STATE_FINISH:
-                appConf.installApp(this);
-                break;
-            case UGAppConf.STATE_INSTALL:
-                appConf.openApp(this);
-                break;
-        }
+//        int viewWidth = view.getWidth();
+//        int viewHeight = view.getHeight();
+//        Log.i("@hzy", "---" + "viewWidth=" + viewWidth + "    " + "viewHeight=" + viewHeight);
+//        final AppBean bean = (AppBean) view.getTag();
+//        final UGAppConf appConf = bean.getAppConf();
+//
+//        UGAppConf.UGOnChangeListenner changeListenner = new UGAppConf.UGOnChangeListenner() {
+//
+//            @Override
+//            public void onChange(UGAppConf conf, int state) {
+//                if (gameProDialog != null) {
+//                    gameProDialog.setProgress(conf.percent);
+//                    if (conf.percent == 100) {
+//                        gameProDialog.cancel();
+//                    }
+//                }
+//            }
+//        };
+//        appConf.addChangeListenner(changeListenner);
+//        switch (appConf.state) {
+//            case UGAppConf.STATE_INIT:
+//            case UGAppConf.STATE_WAIT:
+//            case UGAppConf.STATE_DOWNING:
+//            case UGAppConf.STATE_PAUSE:
+//            case UGAppConf.STATE_UPDATE:
+//                gameProDialog = GameProDialog.createProDialog(this);
+//                appConf.downApp(this);
+//                break;
+//            case UGAppConf.STATE_FINISH:
+//                appConf.installApp(this);
+//                break;
+//            case UGAppConf.STATE_INSTALL:
+//                appConf.openApp(this);
+//                break;
+//        }
     }
 
     private void setWin8Data(ViewGroup viewGroup) {
