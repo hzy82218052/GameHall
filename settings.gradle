@@ -1,1 +1,1 @@
-include ':app', ':download', ':graphics'
+include ':app', ':download', ':graphics','materialleanback','sample'
