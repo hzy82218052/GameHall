@@ -1,6 +1,7 @@
 package com.game.hall.gamehall;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.dd.processbutton.iml.ActionProcessButton;
 import com.game.hall.download.bean.AppBean;
 import com.game.hall.gamehall.mode.bean.GameDetail;
 import com.game.hall.gamehall.presenter.ProgressGenerator;
+import com.game.hall.gamehall.utils.BitmapUtils;
 import com.game.hall.gamehall.widget.detail.GameImageScollView;
 import com.game.hall.gamehall.widget.detail.ScreenShotScollView;
 import com.game.hall.gamehall.widget.detail.TitleLine;
@@ -94,6 +96,13 @@ public class GameDetailActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //@TODO 介绍
+                Intent wechatIntent = new Intent(GameDetailActivity.this,IntroActivity.class);
+                wechatIntent.putExtra(IntroActivity.BITMAP, BitmapUtils.getCurrentActivityShot(GameDetailActivity.this));
+                wechatIntent.putExtra(IntroActivity.CONTENT, "------------haoaaddjkfsjfkldsjfkdj");
+                startActivity(wechatIntent);
+                GameDetailActivity.this.overridePendingTransition(
+                        android.view.animation.Animation.INFINITE,
+                        android.view.animation.Animation.INFINITE);
 //                mIntc.setText(detail.mIntc);
             }
         });
