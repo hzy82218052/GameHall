@@ -116,8 +116,7 @@ public class GameImageView extends FrameLayout {
         screenWidth = wm.getDefaultDisplay().getWidth();
         screenHeight = wm.getDefaultDisplay().getHeight();
 
-        if (maxHeight == 0)
-            maxHeight = screenHeight * 680 / 1080;
+        maxHeight = screenHeight * 334 / 1080;
 
         switch (mode) {
             case VERTICAL:

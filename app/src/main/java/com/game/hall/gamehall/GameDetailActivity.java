@@ -60,9 +60,9 @@ public class GameDetailActivity extends Activity {
         mIcon = (ImageView) findViewById(R.id.game_detail_icon);
 
         mRatingbar = (RatingBar) findViewById(R.id.game_detail_ratingbar);
-        mTitle = (TextView) findViewById(R.id.game_detail_star);
-        mStar = (TextView) findViewById(R.id.game_detail_downnum);
-        mNum = (TextView) findViewById(R.id.game_detail_title);
+        mTitle = (TextView) findViewById(R.id.game_detail_title);
+        mStar = (TextView) findViewById(R.id.game_detail_star);
+        mNum = (TextView) findViewById(R.id.game_detail_downnum);
         mType = (TextView) findViewById(R.id.game_detail_type);
         mIntc = (TextView) findViewById(R.id.game_intc);
         mDown = (ActionProcessButton) findViewById(R.id.game_down);
@@ -138,7 +138,7 @@ public class GameDetailActivity extends Activity {
         mRatingbar.setNumStars(Integer.parseInt(detail.mStar));
 
         mTitle.setText(detail.getAppname());
-        mStar.setText(detail.mStar);
+        mStar.setText(getString(R.string.game_star,detail.mStar));
         mNum.setText(detail.getAppdownloadnum());
         mType.setText(detail.mType);
 

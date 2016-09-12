@@ -53,7 +53,7 @@
 
             <TextView
                 android:id="@+id/game_detail_star"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 style="@style/detail_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -152,11 +152,11 @@
     <com.game.hall.gamehall.widget.detail.ScreenShotScollView
         android:id="@+id/scroll_screenshot"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:interval="3dp"
         app:itemHeight="110dp"
-        app:itemWidth="195dp" />
+        app:itemWidth="195dp"/>
 
 
     <TextView
@@ -183,10 +183,10 @@
     <com.game.hall.gamehall.widget.detail.GameImageScollView
         android:id="@+id/scroll_related"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:interval="3dp"
-        app:itemHeight="110dp"
-        app:itemWidth="110dp" />
+        app:itemHeight="165dp"
+        app:itemWidth="165dp" />
 
 </LinearLayout>

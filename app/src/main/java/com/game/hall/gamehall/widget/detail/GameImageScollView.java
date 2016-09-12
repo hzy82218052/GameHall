@@ -16,7 +16,6 @@ import android.widget.ScrollView;
 
 import com.game.hall.download.bean.AppBean;
 import com.game.hall.gamehall.R;
-import com.game.hall.gamehall.widget.GameImageView;
 
 import java.util.List;
 
@@ -32,8 +31,6 @@ public class GameImageScollView extends HorizontalScrollView implements View.OnC
     private int interval;//ITEM间隔
 
     private LinearLayout linearLayout;//子view
-
-    private List<GameImageView> shotImages;//图片
 
     private List<AppBean> datas;//所有的item
 
@@ -57,8 +54,8 @@ public class GameImageScollView extends HorizontalScrollView implements View.OnC
         }
         nums = datas.size();
         for (int i = 0; i < nums; i++) {
-            final GameImageView imageView = (GameImageView) View.inflate(getContext(), R.layout.game_view_detail_reta, null);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            final GameImageView2 imageView = (GameImageView2) View.inflate(getContext(), R.layout.game_view_detail_reta, null);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.setMargins(interval, 0, interval, 0);
             imageView.setLayoutParams(params);
             imageView.setTxt(datas.get(i).getAppname());

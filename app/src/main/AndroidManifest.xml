@@ -13,6 +13,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".NewApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".TestActivity">
@@ -24,6 +25,7 @@
         </activity>
         <activity android:name=".GameDetailActivity"/>
         <activity android:name=".IntroActivity"/>
+        <!--<activity android:name=".TestActivity"/>-->
     </application>
 
 </manifest>

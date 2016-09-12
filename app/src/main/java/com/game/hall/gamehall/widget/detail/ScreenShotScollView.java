@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -53,6 +54,16 @@ public class ScreenShotScollView extends HorizontalScrollView {
         if (linearLayout.getChildCount() != 0) {
             linearLayout.removeAllViews();
         }
+
+        WindowManager wm = (WindowManager) getContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+
+        int screenHeight = wm.getDefaultDisplay().getHeight();
+        int screenWidth = wm.getDefaultDisplay().getWidth();
+
+        itemHeight = ((screenHeight * 220) / 1080);
+        itemWidth = (screenHeight * 390) / 1080;
+
         nums = itemBitmaps.length;
         for (int i = 0; i < nums; i++) {
             final ImageView imageView = new ImageView(getContext());
@@ -108,12 +119,10 @@ public class ScreenShotScollView extends HorizontalScrollView {
 //        TypedArray typedArray2 = context.obtainStyledAttributes(attrs,
 //                com.android.internal.R.styleable.View);
 //        nums = attrs.getAttributeIntValue(R.styleable.ScreenShot_nums, nums);
-        itemWidth = typedArray.getDimensionPixelOffset(R.styleable.ScreenShot_itemWidth, itemWidth);
-        itemHeight = typedArray.getDimensionPixelOffset(R.styleable.ScreenShot_itemHeight, itemHeight);
         interval = typedArray.getDimensionPixelOffset(R.styleable.ScreenShot_interval, interval);
 
         linearLayout = new LinearLayout(context);
-        ScrollView.LayoutParams lp = new ScrollView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        ScrollView.LayoutParams lp = new ScrollView.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         linearLayout.setLayoutParams(lp);
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
         linearLayout.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -122,15 +131,33 @@ public class ScreenShotScollView extends HorizontalScrollView {
 
     }
 
-//    @Override
-//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-//        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-//    }
-//
-//    @Override
-//    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-//        super.onLayout(changed, l, t, r, b);
-//    }
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+//        int count = linearLayout.getChildCount();
+//        for (int i = 0; i < count; i++) {
+//            View view = linearLayout.getChildAt(i);
+//            if (view instanceof ImageView) {
+//                view.measure(MeasureSpec.makeMeasureSpec(itemWidth, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(itemHeight, MeasureSpec.EXACTLY));
+//            }
+//        }
+//        ((View)linearLayout).measure(MeasureSpec.makeMeasureSpec(screenWidth-itemHeight*200/220, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(itemHeight, MeasureSpec.EXACTLY));
+//        setMeasuredDimension(MeasureSpec.makeMeasureSpec(widthMeasureSpec, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(itemHeight, MeasureSpec.EXACTLY));
+    }
+
+    //
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
+//        linearLayout.layout(0, 0, 0, 0);
+//        int count = linearLayout.getChildCount();
+//        for (int i = 0; i < count; i++) {
+//            View view = linearLayout.getChildAt(i);
+//            if (view instanceof ImageView) {
+//                view.layout(interval, 0, interval, 0);
+//            }
+//        }
+    }
 
 //    @Override
 //    protected void onDraw(Canvas canvas) {
