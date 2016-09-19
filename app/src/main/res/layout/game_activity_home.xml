@@ -1,48 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.game.hall.gamehall.widget.drag.DragView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@mipmap/game_bg"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/layout_title"
-        layout="@layout/game_layout_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="50dp"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/game_bg"
+        android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/game_search"
-        style="@style/title1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/layout_title"
-        android:layout_marginRight="40dp"
-        android:drawableLeft="@mipmap/game_search"
-        android:drawablePadding="10dp"
-        android:text="@string/game_search"
-        android:focusable="true"
-        android:focusableInTouchMode="true"/>
-
-    <HorizontalScrollView
-        android:layout_marginLeft="50dp"
-        android:layout_below="@+id/layout_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/scrollview"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        >
         <include
-            android:id="@+id/game_win8" layout="@layout/game_frame_win8" />
-    </HorizontalScrollView>
+            android:id="@+id/layout_title"
+            layout="@layout/game_layout_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp" />
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/game_search"
+            style="@style/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/layout_title"
+            android:layout_marginRight="40dp"
+            android:drawableLeft="@mipmap/game_search"
+            android:drawablePadding="10dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/game_search" />
+
+        <FrameLayout
+            android:id="@+id/lay_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout_title"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_marginLeft="50dp"></FrameLayout>
+
+
+    </RelativeLayout>
+</com.game.hall.gamehall.widget.drag.DragView>

@@ -1,5 +1,7 @@
 package com.game.hall.gamehall.mode.response;
 
+import com.game.hall.download.bean.AppBean;
+
 import java.util.List;
 
 /**
@@ -7,6 +9,6 @@ import java.util.List;
  */
 public class GameHallResponse extends Response {
 
-    public List<GameHall> data;
+    public List<AppBean> data;
 
 }

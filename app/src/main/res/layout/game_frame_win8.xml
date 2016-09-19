@@ -1,113 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:game="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/merto_content"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/scrollview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:focusable="false"
-    android:focusableInTouchMode="false"
-    android:orientation="horizontal">
-
-    <com.game.hall.gamehall.widget.GameImageView
-        android:id="@+id/game_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:layout_weight="1"
-        android:background="@drawable/bg_game_item"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:onClick="onMy"
-        game:sapemode="vertical" />
+    android:focusableInTouchMode="false">
 
     <LinearLayout
+        android:id="@+id/merto_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:orientation="horizontal">
-
-            <com.game.hall.gamehall.widget.GameImageView
-                android:id="@+id/game_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_game_item"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:onClick="onMy"
-                game:sapemode="horizontal" />
-
-            <com.game.hall.gamehall.widget.GameImageView
-                android:id="@+id/game_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_game_item"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:onClick="onMy"
-                game:sapemode="square" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:orientation="horizontal">
-
-            <com.game.hall.gamehall.widget.GameImageView
-                android:id="@+id/game_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_game_item"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                game:sapemode="square" />
-
-            <com.game.hall.gamehall.widget.GameImageView
-                android:id="@+id/game_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_game_item"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                game:sapemode="horizontal" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:orientation="horizontal">
 
         <com.game.hall.gamehall.widget.GameImageView
-            android:id="@+id/game_6"
+            android:id="@+id/game_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_game_item"
             android:focusable="true"
             android:focusableInTouchMode="true"
             game:sapemode="vertical" />
@@ -115,33 +28,117 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:orientation="vertical">
 
-            <com.game.hall.gamehall.widget.GameImageView
-                android:id="@+id/game_7"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:background="@drawable/bg_game_item"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                game:sapemode="square" />
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:orientation="horizontal">
 
-            <com.game.hall.gamehall.widget.GameImageView
-                android:id="@+id/game_8"
+                <com.game.hall.gamehall.widget.GameImageView
+                    android:id="@+id/game_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    game:sapemode="horizontal" />
+
+                <com.game.hall.gamehall.widget.GameImageView
+                    android:id="@+id/game_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    game:sapemode="square" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
                 android:layout_weight="1"
-                android:background="@drawable/bg_game_item"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                game:sapemode="square" />
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:orientation="horizontal">
+
+                <com.game.hall.gamehall.widget.GameImageView
+                    android:id="@+id/game_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    game:sapemode="square" />
+
+                <com.game.hall.gamehall.widget.GameImageView
+                    android:id="@+id/game_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    game:sapemode="horizontal" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:orientation="horizontal">
+
+            <com.game.hall.gamehall.widget.GameImageView
+                android:id="@+id/game_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                game:sapemode="vertical" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:orientation="vertical">
+
+                <com.game.hall.gamehall.widget.GameImageView
+                    android:id="@+id/game_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    game:sapemode="square" />
+
+                <com.game.hall.gamehall.widget.GameImageView
+                    android:id="@+id/game_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    game:sapemode="square" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</HorizontalScrollView>

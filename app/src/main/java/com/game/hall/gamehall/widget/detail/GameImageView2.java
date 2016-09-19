@@ -64,6 +64,14 @@ public class GameImageView2 extends FrameLayout {
         init(context, attrs);
     }
 
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public TextView getTextView() {
+        return textView;
+    }
+
     public void setDrawableResource(int drawableResource) {
         this.drawableResource = drawableResource;
         imageView.setImageResource(drawableResource);
@@ -138,6 +146,7 @@ public class GameImageView2 extends FrameLayout {
         super.onLayout(changed, left, top, right, bottom);
     }
 
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int count = getChildCount();
@@ -157,7 +166,8 @@ public class GameImageView2 extends FrameLayout {
 //        int widths = resolveSizeAndState(width, widthMeasureSpec, childState);
 //        int heights = resolveSizeAndState(height, heightMeasureSpec,
 //                childState << MEASURED_HEIGHT_STATE_SHIFT);
-        setMeasuredDimension(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
+        setMeasuredDimension(width, height);
+//        measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
 //        super.onMeasure(widthMeasureSpec,heightMeasureSpec);
     }
 

@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@mipmap/game_bg"
     android:orientation="vertical"
-    android:paddingBottom="30dp"
     android:paddingLeft="50dp"
     android:paddingRight="50dp"
     android:paddingTop="30dp">
@@ -149,14 +148,23 @@
         app:dividedColor="@color/colorBlue"
         app:dividedHight="5dp" />
 
-    <com.game.hall.gamehall.widget.detail.ScreenShotScollView
-        android:id="@+id/scroll_screenshot"
+    <!--<com.game.hall.gamehall.widget.detail.ScreenShotScollView-->
+        <!--android:id="@+id/scroll_screenshot"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--app:interval="3dp"-->
+        <!--app:itemHeight="110dp"-->
+        <!--app:itemWidth="195dp"/>-->
+    <com.game.hall.gamehall.widget.recycler.MyRecyclerView
+        android:layout_marginTop="5dp"
+        android:id="@+id/recycler_screenshot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:interval="3dp"
-        app:itemHeight="110dp"
-        app:itemWidth="195dp"/>
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        />
+
 
 
     <TextView
@@ -180,13 +188,21 @@
         app:dividedColor="@color/colorBlue"
         app:dividedHight="5dp" />
 
-    <com.game.hall.gamehall.widget.detail.GameImageScollView
-        android:id="@+id/scroll_related"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <!--<com.game.hall.gamehall.widget.detail.GameImageScollView-->
+        <!--android:id="@+id/scroll_related"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--app:interval="3dp"-->
+        <!--app:itemHeight="165dp"-->
+        <!--app:itemWidth="165dp" />-->
+    <com.game.hall.gamehall.widget.recycler.MyRecyclerView
         android:layout_marginTop="5dp"
-        app:interval="3dp"
-        app:itemHeight="165dp"
-        app:itemWidth="165dp" />
+        android:id="@+id/recycler_related"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        />
 
 </LinearLayout>

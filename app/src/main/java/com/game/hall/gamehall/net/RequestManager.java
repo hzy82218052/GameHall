@@ -19,11 +19,20 @@ public class RequestManager {
                 .build()
                 .execute(callback);
     }
-    public static void getGameDetails(Callback callback){
+    public static void getGameDetails(String gameid,Callback callback){
         OkHttpUtils.getInstance().
                 post()
                 .url(Constans.URL.GAMEDETAIL)
-                .addParams("gameid", "1")
+                .addParams("gameid", gameid)
+                .build()
+                .execute(callback);
+    }
+
+    public static void getGameSearch(String keyword,Callback callback){
+        OkHttpUtils.getInstance().
+                post()
+                .url(Constans.URL.GAMEDETAIL)
+                .addParams("keyword", keyword)
                 .build()
                 .execute(callback);
     }

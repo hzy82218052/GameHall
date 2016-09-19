@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent" android:layout_height="match_parent"
+    android:focusableInTouchMode="false"
+    android:focusable="false"
+    >
+<LinearLayout android:id="@+id/lay_key_letter"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="false"
+    android:focusable="false"
+    >
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        >
+    <TextView android:id="@+id/key_1" style="@style/key_num" android:text="1"/>
+    <TextView android:id="@+id/key_2" style="@style/key_num" android:text="2"/>
+    <TextView android:id="@+id/key_3" style="@style/key_num" android:text="3"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            >
+    <TextView android:id="@+id/key_4" style="@style/key_num" android:text="4"/>
+    <TextView android:id="@+id/key_5" style="@style/key_num" android:text="5"/>
+    <TextView android:id="@+id/key_6" style="@style/key_num" android:text="6"/>
+        </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        >
+    <TextView android:id="@+id/key_7" style="@style/key_num" android:text="7"/>
+    <TextView android:id="@+id/key_8" style="@style/key_num" android:text="8"/>
+    <TextView android:id="@+id/key_9" style="@style/key_num" android:text="9"/>
+    </LinearLayout>
+</LinearLayout>
+<LinearLayout
+    android:layout_alignRight="@+id/lay_key_letter"
+    android:layout_alignLeft="@+id/lay_key_letter"
+    android:layout_below="@+id/lay_key_letter"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="false"
+    android:focusable="false"
+    >
+<TextView android:id="@+id/key_0"  style="@style/key_num" android:text="0"/>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        />
+    <TextView android:id="@+id/key_ABC" style="@style/key_num" android:layout_width="wrap_content" android:text="ABC" android:textColor="@drawable/txt_key_selector2"/>
+<View
+    android:layout_width="1dp"
+    android:layout_height="1dp"
+    android:layout_weight="1"
+    />
+    <TextView android:id="@+id/key_del_2" style="@style/key_num" android:layout_width="wrap_content" android:text="删除" android:textColor="@drawable/txt_key_selector2"/>
+</LinearLayout>
+</RelativeLayout>

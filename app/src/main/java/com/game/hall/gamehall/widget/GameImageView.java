@@ -19,6 +19,10 @@ import com.game.hall.gamehall.R;
  */
 public class GameImageView extends FrameLayout {
 
+    public void setMode(SapeMode mode) {
+        this.mode = mode;
+    }
+
     /**
      * 布局形式只能是
      * <p/>
@@ -50,6 +54,22 @@ public class GameImageView extends FrameLayout {
 
     private ImageView imageView;
     private TextView textView;
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
+
+    public TextView getTextView() {
+        return textView;
+    }
+
+    public void setTextView(TextView textView) {
+        this.textView = textView;
+    }
 
     public GameImageView(Context context) {
         this(context, null);

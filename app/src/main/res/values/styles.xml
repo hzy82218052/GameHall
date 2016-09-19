@@ -9,6 +9,10 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <!--<item name="colorControlActivated">#c6174e</item>-->
     </style>
 
     <style name="MyDialogStyle">
@@ -102,5 +106,40 @@
         <item name="android:paddingBottom">3dp</item>
     </style>
 
-
+    <style name="key_eg">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:text">"A"</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@drawable/txt_key_selector</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@drawable/round_key</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="key_num">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:text">"A"</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@drawable/txt_key_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginRight">25dp</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:layout_marginBottom">18dp</item>
+        <item name="android:background">@drawable/round_key</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:clickable">true</item>
+    </style>
 </resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent" android:layout_height="match_parent"
+    android:focusableInTouchMode="false"
+    android:focusable="false"
+    >
+<LinearLayout android:id="@+id/lay_key_letter"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="false"
+    android:focusable="false"
+    >
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        >
+    <TextView android:id="@+id/key_A" style="@style/key_eg" android:text="A"/>
+    <TextView android:id="@+id/key_B" style="@style/key_eg" android:text="B"/>
+    <TextView android:id="@+id/key_C" style="@style/key_eg" android:text="C"/>
+    <TextView android:id="@+id/key_D" style="@style/key_eg" android:text="D"/>
+    <TextView android:id="@+id/key_E" style="@style/key_eg" android:text="E"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
+            >
+    <TextView android:id="@+id/key_F" style="@style/key_eg" android:text="F"/>
+    <TextView android:id="@+id/key_G" style="@style/key_eg" android:text="G"/>
+    <TextView android:id="@+id/key_H" style="@style/key_eg" android:text="H"/>
+    <TextView android:id="@+id/key_I" style="@style/key_eg" android:text="I"/>
+    <TextView android:id="@+id/key_J" style="@style/key_eg" android:text="J"/>
+        </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        >
+    <TextView android:id="@+id/key_K" style="@style/key_eg" android:text="K"/>
+    <TextView android:id="@+id/key_L" style="@style/key_eg" android:text="L"/>
+    <TextView android:id="@+id/key_M" style="@style/key_eg" android:text="M"/>
+    <TextView android:id="@+id/key_N" style="@style/key_eg" android:text="N"/>
+    <TextView android:id="@+id/key_O" style="@style/key_eg" android:text="O"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView android:id="@+id/key_P" style="@style/key_eg" android:text="P"/>
+    <TextView android:id="@+id/key_Q" style="@style/key_eg" android:text="Q"/>
+    <TextView android:id="@+id/key_R" style="@style/key_eg" android:text="R"/>
+    <TextView android:id="@+id/key_S" style="@style/key_eg" android:text="S"/>
+    <TextView android:id="@+id/key_T" style="@style/key_eg" android:text="T"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        >
+    <TextView android:id="@+id/key_U" style="@style/key_eg" android:text="U"/>
+    <TextView android:id="@+id/key_V" style="@style/key_eg" android:text="V"/>
+    <TextView android:id="@+id/key_W" style="@style/key_eg" android:text="W"/>
+    <TextView android:id="@+id/key_X" style="@style/key_eg" android:text="X"/>
+    <TextView android:id="@+id/key_Y" style="@style/key_eg" android:text="Y"/>
+    </LinearLayout>
+</LinearLayout>
+<LinearLayout
+    android:layout_alignRight="@+id/lay_key_letter"
+    android:layout_alignLeft="@+id/lay_key_letter"
+    android:layout_below="@+id/lay_key_letter"
+    android:orientation="horizontal"
+    android:gravity="right"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="false"
+    android:focusable="false"
+    >
+<TextView android:id="@+id/key_Z"  style="@style/key_eg" android:text="Z"/>
+    <View
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/colorTransparent"
+        />
+<TextView android:id="@+id/key_123" style="@style/key_eg" android:layout_width="wrap_content" android:text="123" android:textColor="@drawable/txt_key_selector2"/>
+<TextView android:id="@+id/key_del" style="@style/key_eg" android:layout_width="wrap_content" android:text="删除" android:textColor="@drawable/txt_key_selector2"/>
+</LinearLayout>
+</RelativeLayout>

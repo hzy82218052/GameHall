@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/game_bg"
+    android:orientation="vertical"
+    android:paddingLeft="50dp"
+    android:paddingTop="30dp">
+
+    <ImageView
+        android:id="@+id/game_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/game_search"
+        android:clickable="true"
+        />
+
+    <EditText
+        android:id="@+id/game_edit"
+        style="@style/detail_title"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/game_search"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:hint="请输入汉语拼音首字母"
+        android:paddingBottom="11dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="23sp" />
+
+    <com.game.hall.gamehall.widget.search.InputKeyView
+        android:id="@+id/game_key_lay"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_edit"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+
+
+    <TextView
+        android:id="@+id/txt_hint"
+        style="@style/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="18sp"
+        android:singleLine="false"
+        android:text="111111111111111111111"
+        android:layout_marginBottom="20dp"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+
+    <TextView
+        android:id="@+id/txt_search_title"
+        style="@style/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@id/game_edit"
+        android:text="热门收索"
+        android:textSize="20sp"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+
+    <com.game.hall.gamehall.widget.recycler.MyRecyclerView
+        android:id="@+id/game_search_datas"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@id/txt_search_title"
+        android:layout_below="@id/txt_search_title" />
+
+
+</RelativeLayout>

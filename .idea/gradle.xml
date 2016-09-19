@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/download" />
             <option value="$PROJECT_DIR$/graphics" />
+            <option value="$PROJECT_DIR$/materialleanback" />
+            <option value="$PROJECT_DIR$/sample" />
           </set>
         </option>
         <option name="myModules">
@@ -22,6 +24,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/download" />
             <option value="$PROJECT_DIR$/graphics" />
+            <option value="$PROJECT_DIR$/materialleanback" />
+            <option value="$PROJECT_DIR$/sample" />
           </set>
         </option>
       </GradleProjectSettings>

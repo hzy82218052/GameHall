@@ -16,15 +16,16 @@
         android:name=".NewApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameDetailActivity"/>
-        <activity android:name=".IntroActivity"/>
+        <activity android:name=".ui.detail.GameDetailActivity"/>
+        <activity android:name=".ui.IntroActivity"/>
+        <activity android:name=".ui.SearchActivity"/>
         <!--<activity android:name=".TestActivity"/>-->
     </application>
 
