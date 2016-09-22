@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.game.hall.gamehall.R;
 import com.game.hall.gamehall.utils.AnimatorSetUtil;
+import com.game.hall.gamehall.utils.LogUtil;
 import com.game.hall.gamehall.widget.recycler.Adapter;
 import com.game.hall.gamehall.widget.recycler.ViewHolder;
 import com.nineoldandroids.animation.Animator;
@@ -55,7 +56,7 @@ public class CellViewHolder extends RecyclerView.ViewHolder {
                 currentAnimator = null;
             }
 
-            Log.i("@hzy", "-----enlarge" + viewHolder.itemView.getId());
+            LogUtil.i("@hzy", "-----enlarge" + viewHolder.itemView.getId());
             int duration = withAnimation ? 300 : 0;
 
             AnimatorSet animatorSet = new AnimatorSet();
@@ -69,7 +70,7 @@ public class CellViewHolder extends RecyclerView.ViewHolder {
             animatorSet.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationStart(Animator animation) {
-                    cardView.setCardElevation(6);
+                    cardView.setCardElevation(8);
                     currentAnimator = null;
                 }
             });
@@ -89,7 +90,7 @@ public class CellViewHolder extends RecyclerView.ViewHolder {
                 currentAnimator = null;
             }
 
-            Log.i("@hzy", "-----reduce" + viewHolder.itemView.getId());
+            LogUtil.i("@hzy", "-----reduce" + viewHolder.itemView.getId());
 
             int duration = withAnimation ? 300 : 0;
 

@@ -15,7 +15,7 @@ public class Response {
      * @return
      */
     public boolean isSuccess() {
-        if (!TextUtils.isEmpty(code) && TextUtils.equals(code, "0")) {
+        if (!TextUtils.isEmpty(code) && TextUtils.equals(code, "100")) {
             return true;
         }
 

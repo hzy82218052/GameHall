@@ -134,8 +134,6 @@ public class MaterialLeanBack extends FrameLayout {
                 for (int i = 0; i < recyclerView.getChildCount(); ++i) {
                     RecyclerView.ViewHolder viewHolder = recyclerView.getChildViewHolder(recyclerView.getChildAt(i));
                     if (viewHolder instanceof CellViewHolder) {
-                        Log.i("@hzy","onScrolled---------"+i);
-
                         CellViewHolder cellViewHolder = ((CellViewHolder) viewHolder);
 
                         if(cellViewHolder.getPosition()==position){
@@ -163,7 +161,6 @@ public class MaterialLeanBack extends FrameLayout {
                 for (int i = 0; i < recyclerView.getChildCount(); ++i) {
                     RecyclerView.ViewHolder viewHolder = recyclerView.getChildViewHolder(recyclerView.getChildAt(i));
                     if (viewHolder instanceof CellViewHolder) {
-                        Log.i("@hzy","onScrolled---------"+i);
                         CellViewHolder cellViewHolder = ((CellViewHolder) viewHolder);
                         if(cellViewHolder.getPosition()==position){
                             cellViewHolder.enlarge(true);

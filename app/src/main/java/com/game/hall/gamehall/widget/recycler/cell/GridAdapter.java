@@ -61,7 +61,7 @@ public class GridAdapter extends RecyclerView.Adapter {
 //                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.game_placeholder2, viewGroup, false);
 //                return new PlaceHolderViewHolder(view, true, -1);
             default:
-                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.game_cell_left, viewGroup, false);
+                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.game_cell_grid, viewGroup, false);
 
                 //simulate wrap_content
                 view.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {

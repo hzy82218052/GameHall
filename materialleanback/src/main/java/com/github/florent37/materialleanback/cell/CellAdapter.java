@@ -82,7 +82,6 @@ public class CellAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, final int position) {
-        Log.i("@hzy","onBindViewHolder---------"+position);
         if (viewHolder instanceof CellViewHolder) {
             final CellViewHolder cellViewHolder = (CellViewHolder) viewHolder;
             if (position == 1)
@@ -95,7 +94,6 @@ public class CellAdapter extends RecyclerView.Adapter {
                 public void onClick(View v) {
                     if(onItemClick!=null){
                         onItemClick.onItemClick(v,position);
-                        Log.i("@hzy","onClick---------"+position);
 //                            cellViewHolder.newPosition(position);
                     }
                 }

@@ -7,7 +7,7 @@
         android:id="@+id/game_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="1dp"
+        android:scaleType="fitXY"
         android:focusable="false"
         android:focusableInTouchMode="false" />
 
@@ -18,9 +18,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@drawable/round_txt_gray"
+        android:layout_alignParentBottom="true"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:padding="10dp"
-        android:text="123" />
+        android:visibility="gone"
+        />
 
 </merge>

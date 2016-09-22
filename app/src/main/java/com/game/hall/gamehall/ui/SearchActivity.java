@@ -134,7 +134,7 @@ public class SearchActivity extends Activity implements View.OnClickListener {
                 for (int i = 0; i < recyclerView.getChildCount(); ++i) {
                     RecyclerView.ViewHolder viewHolder = recyclerView.getChildViewHolder(recyclerView.getChildAt(i));
                     if (viewHolder instanceof GridViewHolder) {
-                        Log.i("@hzy", "onScrolled---------" + i);
+                        LogUtil.i("@hzy", "onScrolled---------" + i);
                         GridViewHolder cellViewHolder = ((GridViewHolder) viewHolder);
                         if (cellViewHolder.getPosition() == 0) {
                             cellViewHolder.enlarge(true);

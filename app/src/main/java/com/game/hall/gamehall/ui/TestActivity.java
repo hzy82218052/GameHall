@@ -13,6 +13,7 @@ import com.game.hall.gamehall.net.RequestManager;
 import com.game.hall.gamehall.net.okhttputils.callback.Callback;
 import com.game.hall.gamehall.utils.BitmapUtils;
 import com.game.hall.gamehall.utils.ChangeCharset;
+import com.game.hall.gamehall.utils.LogUtil;
 import com.google.gson.Gson;
 
 import java.net.URLDecoder;
@@ -36,13 +37,13 @@ public class TestActivity extends Activity {
         mDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("@hzy","--------------str=");
-                RequestManager.getHallGames(new Callback<GameHallResponse>() {
+                LogUtil.i("@hzy","--------------str=");
+                RequestManager.getHallGames("","",new Callback<GameHallResponse>() {
                     @Override
                     public GameHallResponse parseNetworkResponse(Response response, int id) throws Exception {
                         String str = response.body().string();
                         String gbk = ChangeCharset.changeCharset(str,ChangeCharset.UTF_8);
-                        Log.i("@hzy","--------------str="+ URLDecoder.decode(str));
+                        LogUtil.i("@hzy","--------------str="+ URLDecoder.decode(str));
                         System.out.println("--------------str="+ str.toString());
                         return new Gson().fromJson(str,GameHallResponse.class);
                     }

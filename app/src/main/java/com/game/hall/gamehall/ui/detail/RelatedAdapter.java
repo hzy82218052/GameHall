@@ -38,8 +38,8 @@ public class RelatedAdapter extends Adapter<RelatedViewHolder> {
     public void onBindViewHolder(RelatedViewHolder viewHolder, int i) {
 
         final AppBean bean = list.get(i);
-        Picasso.with(viewHolder.image.getContext()).load(R.mipmap.game_test2).into(viewHolder.image);
-        viewHolder.txt.setText(bean.getAppname());
+        Picasso.with(viewHolder.gameImageView.getContext()).load(R.mipmap.game_02).into(viewHolder.gameImageView.getImageView());
+        viewHolder.gameImageView.setTxt(bean.getAppname());
 //        String url = "http://www.lorempixel.com/40" + viewHolder.row + "/40" + viewHolder.cell + "/";
 //        Picasso.with(viewHolder.gameImageView.getContext()).load(url).into(viewHolder.gameImageView.getImageView());
     }

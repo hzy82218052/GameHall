@@ -28,8 +28,8 @@
     <string name="game_screenshot">游戏截图</string>
     <string name="game_related">相关游戏</string>
     <string name="game_star">%1$s分</string>
-    <string name="game_downnum">下载:%1$s次</string>
-    <string name="game_type">分类:%1$s\u0020\u0020\u0020\u0020操作:</string>
+    <string name="game_downnum">下载：%1$s次</string>
+    <string name="game_type">分类：%1$s\u0020\u0020\u0020\u0020操作：</string>
 
 
 

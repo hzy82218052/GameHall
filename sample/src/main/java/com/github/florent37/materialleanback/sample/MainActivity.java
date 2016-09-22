@@ -217,8 +217,6 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < recyclerView.getChildCount(); ++i) {
                     RecyclerView.ViewHolder viewHolder = recyclerView.getChildViewHolder(recyclerView.getChildAt(i));
                     if (viewHolder instanceof CellViewHolder) {
-                        Log.i("@hzy", "onScrolled---------" + i);
-
                         CellViewHolder cellViewHolder = ((CellViewHolder) viewHolder);
 
                         if (cellViewHolder.getPosition() == position) {
@@ -246,7 +244,6 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < recyclerView.getChildCount(); ++i) {
                     RecyclerView.ViewHolder viewHolder = recyclerView.getChildViewHolder(recyclerView.getChildAt(i));
                     if (viewHolder instanceof CellViewHolder) {
-                        Log.i("@hzy", "onScrolled---------" + i);
                         CellViewHolder cellViewHolder = ((CellViewHolder) viewHolder);
                         if (cellViewHolder.getPosition() == 1) {
                             cellViewHolder.enlarge(true);

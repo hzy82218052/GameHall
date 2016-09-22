@@ -153,7 +153,7 @@ public class MyRecyclerView extends RecyclerView {
                 for (int i = 0; i < recyclerView.getChildCount(); ++i) {
                     RecyclerView.ViewHolder viewHolder = recyclerView.getChildViewHolder(recyclerView.getChildAt(i));
                     if (viewHolder instanceof CellViewHolder) {
-                        Log.i("@hzy", "onScrolled---------" + i);
+                        LogUtil.i("@hzy", "onScrolled---------" + i);
                         CellViewHolder cellViewHolder = ((CellViewHolder) viewHolder);
                         if (cellViewHolder.getPosition() == DEFALUT_POSTION) {
                             cellViewHolder.enlarge(true);

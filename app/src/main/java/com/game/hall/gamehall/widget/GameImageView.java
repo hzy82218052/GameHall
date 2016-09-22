@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.game.hall.gamehall.R;
+import com.game.hall.gamehall.utils.LogUtil;
 
 /**
  * 自定义Win8方块
@@ -94,6 +95,7 @@ public class GameImageView extends FrameLayout {
     public void setTxt(String txt) {
         this.txt = txt;
         textView.setText(txt);
+        textView.setVisibility(View.VISIBLE);
         invalidate();
     }
 
@@ -166,7 +168,7 @@ public class GameImageView extends FrameLayout {
         for (int i = 0; i < count; i++) {
             View view = getChildAt(i);
             if (view instanceof ImageView) {
-                Log.i("@hzy", "---" + "Width=" + width + "    " + "viewHeight=" + height);
+                LogUtil.i("@hzy", "---" + "Width=" + width + "    " + "viewHeight=" + height);
                 view.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
             } else {
                 if (view.getVisibility() != view.GONE)

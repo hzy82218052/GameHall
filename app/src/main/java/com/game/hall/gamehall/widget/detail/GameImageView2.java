@@ -6,12 +6,16 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.game.hall.gamehall.R;
+import com.game.hall.gamehall.utils.LogUtil;
 
 /**
  * 自定义Win8方块
@@ -57,6 +61,7 @@ public class GameImageView2 extends FrameLayout {
 
     public GameImageView2(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
+        init(context, attrs);
     }
 
     public GameImageView2(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -76,13 +81,12 @@ public class GameImageView2 extends FrameLayout {
         this.drawableResource = drawableResource;
         imageView.setImageResource(drawableResource);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        invalidate();
     }
 
     public void setTxt(String txt) {
         this.txt = txt;
         textView.setText(txt);
-        invalidate();
+        textView.setVisibility(View.VISIBLE);
     }
 
     public void setTxtSize(int txtSize) {
@@ -154,7 +158,7 @@ public class GameImageView2 extends FrameLayout {
         for (int i = 0; i < count; i++) {
             View view = getChildAt(i);
             if (view instanceof ImageView) {
-                Log.i("@hzy", "---" + "Width=" + width + "    " + "viewHeight=" + height);
+                LogUtil.i("@hzy", "---" + "Width=" + width + "    " + "viewHeight=" + height);
                 view.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
             } else {
                 if (view.getVisibility() != view.GONE)
@@ -166,10 +170,24 @@ public class GameImageView2 extends FrameLayout {
 //        int widths = resolveSizeAndState(width, widthMeasureSpec, childState);
 //        int heights = resolveSizeAndState(height, heightMeasureSpec,
 //                childState << MEASURED_HEIGHT_STATE_SHIFT);
-        setMeasuredDimension(width, height);
+        setMeasuredDimension(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
 //        measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
 //        super.onMeasure(widthMeasureSpec,heightMeasureSpec);
     }
+
+//    @Override
+//    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+//        //  cached.  Apply the cached values to the children.
+//        final int count = getChildCount();
+//        for (int i = 0; i < count; i++) {
+//            View child = getChildAt(i);
+//            if (child.getVisibility() != GONE) {
+//                if (child instanceof ImageView) {
+//                    child.layout(0, 0, width, height);
+//                }
+//            }
+//        }
+//    }
 
 
 //    @Override

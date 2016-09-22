@@ -16,6 +16,7 @@ import android.widget.ScrollView;
 
 import com.game.hall.download.bean.AppBean;
 import com.game.hall.gamehall.R;
+import com.game.hall.gamehall.utils.LogUtil;
 
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class GameImageScollView extends HorizontalScrollView implements View.OnC
         }
         nums = datas.size();
         for (int i = 0; i < nums; i++) {
-            final GameImageView2 imageView = (GameImageView2) View.inflate(getContext(), R.layout.game_view_detail_reta, null);
+            final GameImageView2 imageView = (GameImageView2) View.inflate(getContext(), R.layout.game_cell_item, null);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.setMargins(interval, 0, interval, 0);
             imageView.setLayoutParams(params);
@@ -71,14 +72,14 @@ public class GameImageScollView extends HorizontalScrollView implements View.OnC
         for (int i = 0; i < linearLayout.getChildCount(); i++) {
             View v = linearLayout.getChildAt(i);
             LinearLayout.MarginLayoutParams lm = (LinearLayout.MarginLayoutParams) v.getLayoutParams();
-            Log.i("@hzy", "---lm.left=" + lm.leftMargin + "------lm.right=" + lm.rightMargin);
+            LogUtil.i("@hzy", "---lm.left=" + lm.leftMargin + "------lm.right=" + lm.rightMargin);
         }
         postInvalidate();
-        for (int i = 0; i < linearLayout.getChildCount(); i++) {
-            View v = linearLayout.getChildAt(i);
-            LinearLayout.MarginLayoutParams lm = (LinearLayout.MarginLayoutParams) v.getLayoutParams();
-            Log.i("@hzy", "---2lm.left=" + lm.leftMargin + "------2lm.right=" + lm.rightMargin);
-        }
+//        for (int i = 0; i < linearLayout.getChildCount(); i++) {
+//            View v = linearLayout.getChildAt(i);
+//            LinearLayout.MarginLayoutParams lm = (LinearLayout.MarginLayoutParams) v.getLayoutParams();
+//            LogUtil.i("@hzy", "---2lm.left=" + lm.leftMargin + "------2lm.right=" + lm.rightMargin);
+//        }
     }
 
     public GameImageScollView(Context context) {

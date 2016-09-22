@@ -52,9 +52,9 @@ public class Win8Fragment extends BaseFragment implements View.OnClickListener, 
     public void initView() {
         win8 = (ViewGroup) findViewById(R.id.merto_content);
 
-        creatTestData();
+//        creatTestData();
 
-//        requestDatas();
+        requestDatas();
     }
 
     @Override
@@ -65,8 +65,13 @@ public class Win8Fragment extends BaseFragment implements View.OnClickListener, 
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(mContext, GameDetailActivity.class);
-        startActivity(intent);
+        if(view.getTag() instanceof AppBean){
+            final AppBean bean = (AppBean)view.getTag();
+            Intent intent = new Intent(mContext, GameDetailActivity.class);
+            intent.putExtra(GameDetailActivity.GAMEID,bean.getGameid());
+            startActivity(intent);
+        }
+
     }
 
     /**
@@ -76,6 +81,7 @@ public class Win8Fragment extends BaseFragment implements View.OnClickListener, 
         index = 0;
         for (int i = 0; i < 8; i++) {
             AppBean bean = new AppBean();
+            bean.setGameid((100+i)+"");
             bean.setAppcode(167);
             bean.setAppname("欢乐斗地主" + i);
             bean.setApppackagename("com.qqgame.hlddz");
@@ -141,13 +147,13 @@ public class Win8Fragment extends BaseFragment implements View.OnClickListener, 
      * 请求数据
      */
     private void requestDatas() {
-        RequestManager.getHallGames(callback);
+        RequestManager.getHallGames(title,gameType,callback);
     }
 
     Callback<GameHallResponse> callback = new Callback<GameHallResponse>() {
         @Override
         public GameHallResponse parseNetworkResponse(Response response, int id) throws Exception {
-            String str = response.body().toString();
+            String str = response.body().string();
             LogUtil.i("@hzy", "gamehall--parse:" + str);
             return GsonUtil.getInstance().formJson(str, GameHallResponse.class);
         }
@@ -161,11 +167,15 @@ public class Win8Fragment extends BaseFragment implements View.OnClickListener, 
         public void onResponse(GameHallResponse response, int id) {
             List<AppBean> list = new ArrayList<AppBean>();
             if (response.isSuccess()) {
-                List<AppBean> data = response.data;
+                List<AppBean> data = response.data.game_datas;
                 if (data == null && data.size() == 0) {
                     return;
                 }
                 list.addAll(data);
+            }
+            if(list.size()==0){
+                creatTestData();
+                return;
             }
             setWin8Data(list);
         }

@@ -12,9 +12,11 @@ import java.util.List;
  */
 public class RequestManager {
 
-    public static void getHallGames(Callback callback){
+    public static void getHallGames(String title,String gametype,Callback callback){
         OkHttpUtils.getInstance().
                 post()
+                .addParams("title",title)
+                .addParams("gametype",gametype)
                 .url(Constans.URL.GAMEHALL)
                 .build()
                 .execute(callback);

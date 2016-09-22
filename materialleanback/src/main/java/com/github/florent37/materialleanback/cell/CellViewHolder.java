@@ -59,7 +59,6 @@ public class CellViewHolder extends RecyclerView.ViewHolder {
                 currentAnimator = null;
             }
 
-            Log.i("@hzy","-----enlarge"+viewHolder.itemView.getId());
             int duration = withAnimation? 300 : 0;
 
             AnimatorSet animatorSet = new AnimatorSet();
@@ -94,8 +93,6 @@ public class CellViewHolder extends RecyclerView.ViewHolder {
                 currentAnimator.cancel();
                 currentAnimator = null;
             }
-
-            Log.i("@hzy","-----reduce"+viewHolder.itemView.getId());
 
             int duration = withAnimation? 300 : 0;
 

@@ -4,10 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -19,9 +24,12 @@ import com.game.hall.download.bean.AppBean;
 import com.game.hall.gamehall.R;
 import com.game.hall.gamehall.mode.bean.GameDetail;
 import com.game.hall.gamehall.mode.response.GameDetailResponse;
+import com.game.hall.gamehall.net.RequestManager;
+import com.game.hall.gamehall.net.okhttputils.callback.Callback;
 import com.game.hall.gamehall.presenter.ProgressGenerator;
 import com.game.hall.gamehall.ui.IntroActivity;
 import com.game.hall.gamehall.utils.BitmapUtils;
+import com.game.hall.gamehall.utils.GsonUtil;
 import com.game.hall.gamehall.utils.LogUtil;
 import com.game.hall.gamehall.widget.detail.TitleLine;
 import com.game.hall.gamehall.widget.recycler.MyRecyclerView;
@@ -31,12 +39,15 @@ import com.game.hall.gamehall.widget.recycler.cell.CellViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.Call;
+import okhttp3.Response;
+
 /**
  * Created by hezhiyong on 2016/9/5.
  */
 public class GameDetailActivity extends Activity {
 
-    public static final  String GAMEID = "gameId";
+    public static final String GAMEID = "gameId";
 
     private ImageView mIcon;
 
@@ -51,6 +62,11 @@ public class GameDetailActivity extends Activity {
 
     private TitleLine mTL_shot;//截图
     private TitleLine mTL_related;//相关
+    //左右箭头
+    private ImageView shot_left;
+    private ImageView shot_right;
+    private ImageView related_left;
+    private ImageView related_right;
     //    private ScreenShotScollView mSSS_shot;//图片截图
 //    private GameImageScollView mSSS_related;//游戏相关
     private MyRecyclerView mRecycler_shot;//图片截图
@@ -60,6 +76,7 @@ public class GameDetailActivity extends Activity {
     private List<AppBean> gameRelateds = new ArrayList<AppBean>();
 
     private String gameId;
+    private GameDetailResponse response;
 
 
     @Override
@@ -91,6 +108,10 @@ public class GameDetailActivity extends Activity {
 
         mTL_shot = (TitleLine) findViewById(R.id.titile_screenshot);
         mTL_related = (TitleLine) findViewById(R.id.titile_related);
+        shot_left = (ImageView) findViewById(R.id.shot_arrow_left);
+        shot_right = (ImageView) findViewById(R.id.shot_arrow_right);
+        related_left = (ImageView) findViewById(R.id.related_arrow_left);
+        related_right = (ImageView) findViewById(R.id.related_arrow_right);
         mRecycler_shot = (MyRecyclerView) findViewById(R.id.recycler_screenshot);
         mRecycler_related = (MyRecyclerView) findViewById(R.id.recycler_related);
 
@@ -104,10 +125,10 @@ public class GameDetailActivity extends Activity {
      */
     void initRecycler() {
         ShotAdapter shotAdapter = new ShotAdapter(mShots);
-        mRecycler_shot.initRecycler(mRecycler_shot,shotAdapter);
+        mRecycler_shot.initRecycler(mRecycler_shot, shotAdapter);
 
         RelatedAdapter relatedAdapter = new RelatedAdapter(gameRelateds);
-        mRecycler_related.initRecycler(mRecycler_related,relatedAdapter);
+        mRecycler_related.initRecycler(mRecycler_related, relatedAdapter);
     }
 
 
@@ -132,7 +153,8 @@ public class GameDetailActivity extends Activity {
                 //@TODO 介绍
                 Intent wechatIntent = new Intent(GameDetailActivity.this, IntroActivity.class);
                 IntroActivity.bitmap = BitmapUtils.getCurrentActivityShot(GameDetailActivity.this);
-                wechatIntent.putExtra(IntroActivity.CONTENT, "------------haoaaddjkfsjfkldsjfkdj");
+                final GameDetail detail = response.gamedetail;
+                wechatIntent.putExtra(IntroActivity.CONTENT, detail.content);
                 startActivity(wechatIntent);
                 GameDetailActivity.this.overridePendingTransition(
                         android.view.animation.Animation.INFINITE,
@@ -142,23 +164,6 @@ public class GameDetailActivity extends Activity {
         });
 
 
-//        mSSS_shot.setMyOnFocusChangeListener(new ScreenShotScollView.MyOnFocusChangeListener() {
-//            @Override
-//            public void onFocusChange(int select) {
-//                mTL_shot.setCurrentItem(select);
-//            }
-//        });
-//        mSSS_related.setMyOnFocusChangeListener(new GameImageScollView.MyGameListener() {
-//            @Override
-//            public void onFocusChange(int select) {
-//                mTL_related.setCurrentItem(select);
-//            }
-//
-//            @Override
-//            public void onClick(AppBean bean) {
-//                //TODO 跳转游戏详情
-//            }
-//        });
     }
 
 
@@ -166,28 +171,31 @@ public class GameDetailActivity extends Activity {
      * 请求
      */
     private void requestData() {
-        GameDetailResponse response = createDetail();
-        setDatas(response);
-//        RequestManager.getGameDetails(gameId,new Callback<GameDetailResponse>() {
-//            @Override
-//            public GameDetailResponse parseNetworkResponse(Response response, int id) throws Exception {
-//                String str = response.body().string();
-//                LogUtil.i("@hzy", "getGameDetails----------" + str);
-//                return GsonUtil.getInstance().formJson(str, GameDetailResponse.class);
-//            }
-//
-//            @Override
-//            public void onError(Call call, Exception e, int id) {
-//
-//            }
-//
-//            @Override
-//            public void onResponse(GameDetailResponse response, int id) {
-//                if (response.isSuccess()) {
-//                    setDatas(response);
-//                }
-//            }
-//        });
+        RequestManager.getGameDetails(gameId, new Callback<GameDetailResponse>() {
+            @Override
+            public GameDetailResponse parseNetworkResponse(Response response, int id) throws Exception {
+                String str = response.body().string();
+                LogUtil.i("@hzy", "getGameDetails----------" + str);
+                return GsonUtil.getInstance().formJson(str, GameDetailResponse.class);
+            }
+
+            @Override
+            public void onError(Call call, Exception e, int id) {
+
+            }
+
+            @Override
+            public void onResponse(GameDetailResponse response, int id) {
+                if (response.isSuccess()) {
+                    if (response.gamedetail != null)
+                        setDatas(response);
+                }
+                if (response.gamedetail == null) {
+                    GameDetailResponse test = createDetail();
+                    setDatas(test);
+                }
+            }
+        });
     }
 
 
@@ -249,18 +257,24 @@ public class GameDetailActivity extends Activity {
      * @param response
      */
     private void setDatas(GameDetailResponse response) {
-
-        GameDetail detail = response.gamedetail;
+        this.response = response;
+        final GameDetail detail = response.gamedetail;
         List<AppBean> app_recom = response.app_recom;
 
         mIcon.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.game_test1));
-        mRatingbar.setMax(5);
-        mRatingbar.setNumStars(Integer.parseInt(detail.appstar));
 
         mTitle.setText(detail.getAppname());
+
+        mRatingbar.setRating(Float.parseFloat(detail.appstar));
         mStar.setText(getString(R.string.game_star, detail.appstar));
-        mNum.setText(detail.getAppdownloadnum());
-        mType.setText(detail.getGametype());
+
+        mNum.setText(getString(R.string.game_downnum,detail.getAppdownloadnum()));
+
+
+        mType.setText(getString(R.string.game_type,detail.getGametype()));
+
+        mType.append(getStringIcon(0));
+        mType.setGravity(Gravity.CENTER_VERTICAL);
 
         mTL_shot.setDivided(detail.imageurl.size());
         mTL_related.setDivided(app_recom.size());
@@ -274,6 +288,45 @@ public class GameDetailActivity extends Activity {
         gameRelateds.clear();
         gameRelateds.addAll(app_recom);
         mRecycler_related.getAdapter().notifyDataSetChanged();
+    }
+
+
+    private SpannableString getStringIcon(int type){
+
+        Bitmap b = BitmapFactory.decodeResource(getResources(), R.mipmap.game_handle);
+        Matrix matrix = new Matrix();
+        matrix.postScale(0.7f , 0.7f); //长和宽放大缩小的比例
+        Bitmap bitmap = Bitmap.createBitmap(b,0,0,b.getWidth(),b.getHeight(),matrix,false);
+        ImageSpan imgSpan = new ImageSpan(this, bitmap);
+        SpannableString spanString = new SpannableString("icon");
+        spanString.setSpan(imgSpan, 0, 4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        if(!b.isRecycled()){
+            b.recycle();
+            b=null;
+        }
+        return spanString;
+    }
+
+    /**
+     *
+     * @param blow  //shot或者related  0、1
+     * @param leftOrRight 0、1 左右
+     * @param seletor 选中
+     */
+    private void setArrow(int blow,int leftOrRight,boolean seletor){
+        View view = shot_left;
+        switch(blow){
+            case 0:
+                view = leftOrRight==0?shot_left:shot_right;
+
+                break;
+            case 1:
+                view = leftOrRight==0?related_left:related_right;
+                break;
+        }
+        view.setSelected(seletor);
+
     }
 
 
